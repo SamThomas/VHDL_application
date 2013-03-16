@@ -1,14 +1,3 @@
-										-----------------------------------------
-										-----------------------------------------
-										-- Company: ECE Paris                  --
-										-- Engineers: Gautier GRAMAGE          --
-										--				  Martin LEGRIS            --
-										-- 			  Samuel THOMAS            --
-										-- Module Name: t_clock2 - Behavioral  --
-										-----------------------------------------
-										-----------------------------------------
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
