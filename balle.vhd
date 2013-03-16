@@ -1,12 +1,3 @@
-										-----------------------------------------
-										-----------------------------------------
-										-- Company: ECE Paris                  --
-										-- Engineers: Gautier GRAMAGE          --
-										--				  Martin LEGRIS            --
-										-- 			  Samuel THOMAS            --
-										-- Module Name:    balle - Behavioral  --
-										-----------------------------------------
-										-----------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
@@ -41,11 +32,11 @@ architecture Behavioral of balle is
 	signal posX_balle : integer:=500;
 	signal posY_balle : integer:=300;
 	
---Génération des signaux de synchronisation
+--Gï¿½nï¿½ration des signaux de synchronisation
 begin
 process (clk25)
 
- --gestion du spot sur l'écran
+ --gestion du spot sur l'ï¿½cran
 
 begin
 if clk25'event and clk25='1' then
@@ -58,14 +49,14 @@ end if;
 end if;
 end process;
 
---FS2 définition de l'objet
+--FS2 dï¿½finition de l'objet
 
 process (Clk25)
 CONSTANT tailleX_balle :integer := 40;  --15
 CONSTANT tailleY_balle :integer := 40; --15
 TYPE image2 is ARRAY(0 to tailleY_balle, 0 to taillex_balle) OF std_logic;
 
---Dessin de la balle fait à partir dune image filtrée (->voir code Allegro)
+--Dessin de la balle fait ï¿½ partir dune image filtrï¿½e (->voir code Allegro)
 CONSTANT balle : image2 := ( 
 ('0','0','0','0','0','0','0','0','0','0','0','0','0','0','1','0','1','0','1','1','1','1','1','1','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','1'),
 ('0','0','0','0','0','0','0','0','0','0','0','1','1','0','0','0','0','1','1','1','1','1','1','1','1','1','1','0','0','0','0','0','0','0','0','0','0','0','0','0','1'),
@@ -142,7 +133,7 @@ Valide_balle <= '1'when (Compteur_pixels_balle>=144 and Compteur_pixels_balle< 7
 HSb <= '0' when Compteur_pixels_balle < 96 else '1';
 Horloge <= '0' when Compteur_lignes_balle < 2 else '1';
 
---FS3: Génération des signaux de couleurs
+--FS3: Gï¿½nï¿½ration des signaux de couleurs
 ROUGEb <= '0' when collisionb='1' else '1';
 VERTb <=  Valide_balle and Spot_balle;
 BLEUb<=  '0' when collisionb='1' else '1';
@@ -154,7 +145,7 @@ by <= posY_balle;
 VSb<=Horloge;
 ---------------------------------------------------------------------------------------------------------------------
 
--- Déplacement du ballon
+-- Dï¿½placement du ballon
 process(Horloge)
 
 variable depX:integer:=1;
@@ -178,7 +169,7 @@ if Horloge'event and Horloge='1' then
 		blocked:='0';
 		
 	end if;
-	--Penser à changer les 15 par les tailles de la balle
+	--Penser ï¿½ changer les 15 par les tailles de la balle
 	if((posY_balle < 50 and depY=-1) or (posY_balle+40 >478 and depY = 1)) then
 		depY:=-depY;
 	end if;
