@@ -1,17 +1,8 @@
-										-----------------------------------------
-										-----------------------------------------
-										-- Company: ECE Paris                  --
-										-- Engineers: Gautier GRAMAGE          --
-										--				  Martin LEGRIS            --
-										-- 			  Samuel THOMAS            --
-										-----------------------------------------
-										-----------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
--------------------------------------------------------------------------------------------------------------------------------
 --*****************************************************************************************************************************
 entity kiki is
 
@@ -43,12 +34,12 @@ signal Valide :  STD_LOGIC :='0';
 signal Horloge : STD_LOGIC :='0';
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 --FS1
---Génération des signaux de synchronisation
+--Gï¿½nï¿½ration des signaux de synchronisation
 begin
 process (clk25) 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
---FSS11: gestion du spot sur l'écran
+--FSS11: gestion du spot sur l'ï¿½cran
 
 begin
 if clk25'event and clk25='1' then
@@ -61,7 +52,7 @@ end if;
 end if;
 end process;
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
---FS2 définition de l'objet
+--FS2 dï¿½finition de l'objet
 
 process (Clk25)
 CONSTANT tailleX :integer := 83;  
@@ -170,7 +161,7 @@ Horloge <= '0' when Compteur_lignes < 2 else '1';
 
 VS<=Horloge;
 
---FS3: Génération des signaux de couleurs
+--FS3: Gï¿½nï¿½ration des signaux de couleurs
 ROUGE <= Valide and Spot;
 VERT <=  '0' when (collision='1') else '1';
 --VERT <= Valide and Spot;
@@ -182,7 +173,7 @@ ty<= posY;
 end dessin ;
 
 --------------------------------------------------------------------------------------------
---Code précédent
+--Code prï¿½cï¿½dent
 
 --process (clk1h)
 --	begin
@@ -209,7 +200,7 @@ end dessin ;
 --HS <= '0' when Compteur_pixels < 96 else '1';
 --VS <= '0' when Compteur_lignes < 2 else '1';
 --
-----FS3: Génération des signaux de couleurs
+----FS3: Gï¿½nï¿½ration des signaux de couleurs
 --ROUGE <= Valide and Spot;
 --VERT <=  '0';
 --BLEU<=  Valide and  Spot;
