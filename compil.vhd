@@ -1,16 +1,3 @@
-
-										-----------------------------------------
-										-----------------------------------------
-										-- Company: ECE Paris                  --
-										-- Engineers: Gautier GRAMAGE          --
-										--				  Martin LEGRIS            --
-										-- 			  Samuel THOMAS            --
-										-- Compilation de tous les modules     --
-										-- 28/02/2012								   -- 
-										-----------------------------------------
-										-----------------------------------------
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
@@ -29,7 +16,7 @@ entity compil is
            ssBLEU : out std_logic:='0';
 			ssVS : out STD_LOGIC :='0';
 
--- Déclaration des LEDS de couleurs présentes sur la carte BASYS
+-- Dï¿½claration des LEDS de couleurs prï¿½sentes sur la carte BASYS
 led0: out std_logic:='0'; 
 led1: out std_logic:='0'; 
 led2: out std_logic:='0';
@@ -120,7 +107,7 @@ begin
 		else scollision<='0';
 	end if;
 ------------------------------------------------------------------------------------------	
-	-- Si il y a collision alors on allume les LEDs sinon elles sont éteintes
+	-- Si il y a collision alors on allume les LEDs sinon elles sont ï¿½teintes
 if( scollision='0')then
 led0<='1'; 
 led1<='1'; 
