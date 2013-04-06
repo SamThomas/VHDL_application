@@ -1,5 +1,5 @@
 ************************************************
-# Graphical application using VHDL and VGA port
+# Graphical application using VHDL
 ***********************************************
 
 ## Intro
@@ -11,7 +11,7 @@ The Spartan-3E family is a superior alternative to mask programmed ASICs. FPGAs 
 Also, FPGA programmability permits design upgrades in the field with no hardware replacement necessary, an impossibility with ASICs.
 
 ## Xilinx
-### A Generation Ahead 28nm Process Technology
+### ♦ A Generation Ahead 28nm Process Technology
 
 Xilinx and technology and manufacturing partner Taiwan Semiconductor Manufacturing Company (TSMC) developed a high-κ metal gate (HKMG), high-performance, low-power 28nm process technology for FPGAs. This new 28nm process technology builds upon the achievements of 40nm FPGA process development and introduces a new HKMG technology to maximize usable system performance through lower power.
 
@@ -19,6 +19,6 @@ This technology, although unique in the FPGA industry, is already being embraced
 
 Dramatic reductions in FPGA static power at 28nm leaves more of the system power budget for active, dynamic power, yielding higher levels of both integration and system performance. This gives designers the flexibility to implement products at lower power, or alternatively, create products that increase capacity and performance within the same power budget.
 
-### Breakthrough in Optimization and Integration
+### ♦ Breakthrough in Optimization and Integration
 
 Five product families with breakthroughs in integration and optimization that change the game in price/performance/watt and enable programmable systems integration. With a broad portfolio of All Programmable FPGAs, SoCs and 3D ICs, you are empowered to maximize system performance, lower power, and reduce BOM costs, while preserving design flexibility across   a wide range of markets and applications.
