@@ -172,38 +172,3 @@ ty<= posY;
 
 end dessin ;
 
---------------------------------------------------------------------------------------------
---Code pr�c�dent
-
---process (clk1h)
---	begin
---	--Module de deplacement
---if clk1h'event and clk1h='1' then
---	if up='1' then 
---		posY<=posY-10;
---		end if;
---	if do='1' then 
---		posY<=posY+10;
---		end if;
---	if le='1' then 
---		posX<=posX-10;
---		end if;
---	if ri='1' then 
---		posX<=posX+10;
---		end if;
---end if;
---end process;
-------------------------------------------------------------------------------------------------------------------------------------------------------------
-----FSS12: compteurs lignes/pixels
---Valide <= '1'when (Compteur_pixels>=144 and Compteur_pixels< 783 
---           and Compteur_lignes>=31 and Compteur_lignes<510) else '0' ;
---HS <= '0' when Compteur_pixels < 96 else '1';
---VS <= '0' when Compteur_lignes < 2 else '1';
---
-----FS3: G�n�ration des signaux de couleurs
---ROUGE <= Valide and Spot;
---VERT <=  '0';
---BLEU<=  Valide and  Spot;
---end dessin ;
---
---
