@@ -25,3 +25,6 @@ Dramatic reductions in FPGA static power at 28nm leaves more of the system power
 ### ♦ Breakthrough in Optimization and Integration
 
 Five product families with breakthroughs in integration and optimization that change the game in price/performance/watt and enable programmable systems integration. With a broad portfolio of All Programmable FPGAs, SoCs and 3D ICs, you are empowered to maximize system performance, lower power, and reduce BOM costs, while preserving design flexibility across   a wide range of markets and applications.
+
+### ♦ License 
+![MIT](http://upload.wikimedia.org/wikipedia/commons/4/42/Opensource.svg "MIT")
