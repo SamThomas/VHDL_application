@@ -26,5 +26,26 @@ Dramatic reductions in FPGA static power at 28nm leaves more of the system power
 
 Five product families with breakthroughs in integration and optimization that change the game in price/performance/watt and enable programmable systems integration. With a broad portfolio of All Programmable FPGAs, SoCs and 3D ICs, you are empowered to maximize system performance, lower power, and reduce BOM costs, while preserving design flexibility across   a wide range of markets and applications.
 
-### ♦ License 
+### ♦ The MIT License
+
+Copyright (c) 
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
 ![MIT](http://upload.wikimedia.org/wikipedia/commons/4/42/Opensource.svg "MIT")
