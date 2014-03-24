@@ -3,7 +3,6 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
---****************************************************************************************************************************************
 entity balle is
 Port (clk25 : in STD_LOGIC;
 collisionb : in std_logic;
@@ -15,7 +14,6 @@ VSb : out STD_LOGIC :='0';
 bx : out integer :=500;
 by : out integer :=300);
 end balle;
---**********************************************************************************************************************************
 
 architecture Behavioral of balle is
 
@@ -122,7 +120,6 @@ if clk25'event and clk25='1' then
 end if;
 end process;
 	
-----------------------------------------------------------------------------------------------------------------------------------------------------------
 --FSS12: compteurs lignes/pixels
 Valide_balle <= '1'when (Compteur_pixels_balle>=144 and Compteur_pixels_balle< 783 
            and Compteur_lignes_balle>=31 and Compteur_lignes_balle<510) else '0' ;
@@ -139,7 +136,7 @@ bx <= posX_balle;
 by <= posY_balle;
 
 VSb<=Horloge;
----------------------------------------------------------------------------------------------------------------------
+
 
 -- D�placement du ballon
 process(Horloge)
