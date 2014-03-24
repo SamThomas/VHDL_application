@@ -1,6 +1,5 @@
-************************************************
-# Graphical application using VHDL
-***********************************************
+#Graphics application using VHDL
+
 ![](http://www.digilentinc.com/Data/Products/BASYS2/BASYS2-top-400.jpg "")
 
 ## Intro
