@@ -1,5 +1,7 @@
 #Graphics application using VHDL
 
+> **Important Note**: This repository contains the source codes of a VHDL application dedicated to the Spartan-3E FPGA family.
+
 ![](http://www.digilentinc.com/Data/Products/BASYS2/BASYS2-top-400.jpg "")
 
 ## Intro
