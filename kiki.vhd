@@ -6,20 +6,20 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 --*****************************************************************************************************************************
 entity kiki is
 
-Port (clk25 : in STD_LOGIC;
-clk1h : in STD_LOGIC;
-collision : in std_logic;
-up : in STD_LOGIC;-- pins : 69/48/47/41
-do : in STD_LOGIC;
-ri : in STD_LOGIC;
-le : in STD_LOGIC;
-HS : out STD_LOGIC :='0';
-           ROUGE : out std_logic:='0';
-           VERT : out std_logic:='0';
-           BLEU : out std_logic:='0';
-VS : out STD_LOGIC :='0';
-tx : out integer :=200;
-ty : out integer := 200);
+Port (	clk25 		: in STD_LOGIC;
+	clk1h 		: in STD_LOGIC;
+	collision 	: in std_logic;
+	up 		: in STD_LOGIC;		-- pins : 69/48/47/41
+	do 		: in STD_LOGIC;
+	ri 		: in STD_LOGIC;
+	le 		: in STD_LOGIC;
+	HS 		: out STD_LOGIC :='0';
+        ROUGE 		: out std_logic:='0';
+        VERT 		: out std_logic:='0';
+        BLEU 		: out std_logic:='0';
+	VS 		: out STD_LOGIC :='0';
+	tx 		: out integer :=200;
+	ty 		: out integer := 200);
 end kiki ;
 --******************************************************************************************************************************
 
