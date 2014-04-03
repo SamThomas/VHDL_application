@@ -25,22 +25,20 @@ end kiki ;
 
 architecture dessin of kiki is
 
-signal Compteur_pixels: std_logic_vector(9 downto 0) :="0000000000";
-signal Compteur_lignes: std_logic_vector(9 downto 0) :="0000000000";
-signal posX:integer :=200;
-signal posY:integer :=200;
-signal Spot   :  STD_LOGIC :='0';
-signal Valide :  STD_LOGIC :='0';
-signal Horloge : STD_LOGIC :='0';
+signal Compteur_pixels		: std_logic_vector(9 downto 0) :="0000000000";
+signal Compteur_lignes		: std_logic_vector(9 downto 0) :="0000000000";
+signal posX:integer 		:=200;
+signal posY:integer 		:=200;
+signal Spot   			: STD_LOGIC :='0';
+signal Valide 			: STD_LOGIC :='0';
+signal Horloge 			: STD_LOGIC :='0';
 ----------------------------------------------------------------------------------------------------------------------------------------------------
---FS1
 --G�n�ration des signaux de synchronisation
 begin
 process (clk25) 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
---FSS11: gestion du spot sur l'�cran
-
+--gestion du spot sur l'�cran
 begin
 if clk25'event and clk25='1' then
 Compteur_pixels<= Compteur_pixels+1;
@@ -52,7 +50,7 @@ end if;
 end if;
 end process;
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
---FS2 d�finition de l'objet
+--D�finition de l'objet
 
 process (Clk25)
 CONSTANT tailleX :integer := 83;  
@@ -108,6 +106,8 @@ CONSTANT chien : image := (
 ('0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0'),
 ('0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0')
 );
+
+
 variable Ligne:integer:=0;
 variable Pixel:integer:=0;
 variable origineX:integer:=0;--200
@@ -132,6 +132,7 @@ if clk25'event and clk25='1' then
 	end if;
 end if;
 	end process;
+	
 -------------------------------------------------------------------------------------------------
 --Code du 3/04/12
 process (Horloge)
@@ -153,19 +154,19 @@ if Horloge'event and Horloge='1' then
 end if;
 end process;
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
---FSS12: compteurs lignes/pixels
-Valide <= '1'when (Compteur_pixels>=144 and Compteur_pixels< 783 
-           and Compteur_lignes>=31 and Compteur_lignes<510) else '0' ;
-HS <= '0' when Compteur_pixels < 96 else '1';
-Horloge <= '0' when Compteur_lignes < 2 else '1';
+-- Compteurs lignes/pixels
+Valide 		<= '1'	when (Compteur_pixels>=144 and Compteur_pixels< 783 
+           		and Compteur_lignes>=31 and Compteur_lignes<510) else '0' ;
+HS 		<= '0' 	when Compteur_pixels < 96 else '1';
+Horloge 	<= '0' 	when Compteur_lignes < 2 else '1';
 
-VS<=Horloge;
+VS		<= Horloge;
 
---FS3: G�n�ration des signaux de couleurs
-ROUGE <= Valide and Spot;
-VERT <=  '0' when (collision='1') else '1';
---VERT <= Valide and Spot;
-BLEU<=  Valide and  Spot;
+-- G�n�ration des signaux de couleurs
+ROUGE 	<= Valide and Spot;
+VERT 	<=  '0' when (collision='1') else '1';
+--VERT 	<= Valide and Spot;
+BLEU	<=  Valide and  Spot;
 
 tx<= posX;
 ty<= posY;
