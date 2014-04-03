@@ -3,7 +3,6 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
---*****************************************************************************************************************************
 entity kiki is
 
 Port (	clk25 		: in STD_LOGIC;
@@ -21,7 +20,6 @@ Port (	clk25 		: in STD_LOGIC;
 	tx 		: out integer :=200;
 	ty 		: out integer := 200);
 end kiki ;
---******************************************************************************************************************************
 
 architecture dessin of kiki is
 
@@ -32,12 +30,13 @@ signal posY:integer 		:=200;
 signal Spot   			: STD_LOGIC :='0';
 signal Valide 			: STD_LOGIC :='0';
 signal Horloge 			: STD_LOGIC :='0';
-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 --G�n�ration des signaux de synchronisation
 begin
+
 process (clk25) 
 
----------------------------------------------------------------------------------------------------------------------------------------------------
 --gestion du spot sur l'�cran
 begin
 if clk25'event and clk25='1' then
@@ -49,7 +48,7 @@ end if;
 end if;
 end if;
 end process;
----------------------------------------------------------------------------------------------------------------------------------------------------------
+
 --D�finition de l'objet
 
 process (Clk25)
@@ -133,7 +132,7 @@ if clk25'event and clk25='1' then
 end if;
 	end process;
 	
--------------------------------------------------------------------------------------------------
+
 --Code du 3/04/12
 process (Horloge)
 	begin
@@ -153,7 +152,7 @@ if Horloge'event and Horloge='1' then
 		end if;
 end if;
 end process;
-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
 -- Compteurs lignes/pixels
 Valide 		<= '1'	when (Compteur_pixels>=144 and Compteur_pixels< 783 
            		and Compteur_lignes>=31 and Compteur_lignes<510) else '0' ;
