@@ -4,15 +4,15 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity balle is
-Port (clk25 : in STD_LOGIC;
-collisionb : in std_logic;
-HSb : out STD_LOGIC :='0';
-           ROUGEb : out std_logic:='0';
-           VERTb : out std_logic:='0';
-           BLEUb : out std_logic:='0';
-VSb : out STD_LOGIC :='0';
-bx : out integer :=500;
-by : out integer :=300);
+Port (	clk25 		: in STD_LOGIC;
+	collisionb 	: in STD_LOGIC;
+	HSb 		: out STD_LOGIC 	:='0';
+        ROUGEb 		: out STD_LOGIC		:='0';
+        VERTb 		: out STD_LOGIC		:='0';
+        BLEUb 		: out STD_LOGIC		:='0';
+	VSb 		: out STD_LOGIC 	:='0';
+	bx 		: out integer 		:=500;
+	by 		: out integer 		:=300);
 end balle;
 
 architecture Behavioral of balle is
@@ -34,20 +34,23 @@ process (clk25)
 
 begin
 if clk25'event and clk25='1' then
-Compteur_pixels_balle<= Compteur_pixels_balle+1;
-if (Compteur_pixels_balle= 799)then Compteur_pixels_balle<= "0000000000"; 
-Compteur_lignes_balle<= Compteur_lignes_balle+1;
-if (Compteur_lignes_balle= 520)then Compteur_lignes_balle<= "0000000000";
+	Compteur_pixels_balle	<= Compteur_pixels_balle+1;
+if (Compteur_pixels_balle= 799)then 
+	Compteur_pixels_balle	<= "0000000000"; 
+	Compteur_lignes_balle	<= Compteur_lignes_balle+1;
+if (Compteur_lignes_balle= 520)then 
+	Compteur_lignes_balle<= "0000000000";
 end if;
 end if;
 end if;
 end process;
 
---FS2 d�finition de l'objet
+-- definition de l'objet
 
 process (Clk25)
 CONSTANT tailleX_balle :integer := 40;  --15
 CONSTANT tailleY_balle :integer := 40; --15
+
 TYPE image2 is ARRAY(0 to tailleY_balle, 0 to taillex_balle) OF std_logic;
 
 --Dessin de la balle fait � partir dune image filtr�e (->voir code Allegro)
@@ -112,24 +115,38 @@ if clk25'event and clk25='1' then
 		Spot_balle <= balle (ligne_balle,Pixel_balle);
 		Pixel_balle := Pixel_balle+1;
 	else Spot_balle <= '0';
-		if pixel_balle = tailleX_balle then pixel_balle := 0; ligne_balle := ligne_balle + 1;
-			if ligne_balle = tailleY_balle then ligne_balle := 0;
-			end if;
-		end if;
+	
+	if pixel_balle = tailleX_balle then 
+		pixel_balle := 0; 
+		ligne_balle := ligne_balle + 1;
+		
+	if ligne_balle = tailleY_balle then 
+		ligne_balle := 0;
+	end if;
+	end if;
 	end if;
 end if;
 end process;
 	
---FSS12: compteurs lignes/pixels
-Valide_balle <= '1'when (Compteur_pixels_balle>=144 and Compteur_pixels_balle< 783 
-           and Compteur_lignes_balle>=31 and Compteur_lignes_balle<510) else '0' ;
-HSb <= '0' when Compteur_pixels_balle < 96 else '1';
-Horloge <= '0' when Compteur_lignes_balle < 2 else '1';
+-- compteurs lignes/pixels
+Valide_balle 	<= '1'	when (Compteur_pixels_balle>=144 and Compteur_pixels_balle< 783 
+           		and Compteur_lignes_balle>=31 
+           		and Compteur_lignes_balle<510) 
+           		else '0';
+           		
+HSb 		<= '0' when Compteur_pixels_balle < 96 
+			else '1';
+			
+Horloge 	<= '0' when Compteur_lignes_balle < 2 
+			else '1';
 
---FS3: G�n�ration des signaux de couleurs
-ROUGEb <= '0' when collisionb='1' else '1';
-VERTb <=  Valide_balle and Spot_balle;
-BLEUb<=  '0' when collisionb='1' else '1';
+
+-- Generation des signaux de couleurs
+ROUGEb 	<= '0' when collisionb='1' 
+	else '1';
+VERTb 	<=  Valide_balle and Spot_balle;
+BLEUb	<=  '0' when collisionb='1' 
+	else '1';
 
 
 bx <= posX_balle;
@@ -138,7 +155,7 @@ by <= posY_balle;
 VSb<=Horloge;
 
 
--- D�placement du ballon
+-- Deplacement du ballon
 process(Horloge)
 
 variable depX:integer:=1;
