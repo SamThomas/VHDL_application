@@ -6,13 +6,14 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity balle is
 Port (	clk25 		: in STD_LOGIC;
 	collisionb 	: in STD_LOGIC;
-	HSb 		: out STD_LOGIC 	:='0';
-        ROUGEb 		: out STD_LOGIC		:='0';
-        VERTb 		: out STD_LOGIC		:='0';
-        BLEUb 		: out STD_LOGIC		:='0';
-	VSb 		: out STD_LOGIC 	:='0';
-	bx 		: out integer 		:=500;
-	by 		: out integer 		:=300);
+	HSb 		: out STD_LOGIC 	:=	'0';
+        ROUGEb 		: out STD_LOGIC		:=	'0';
+        VERTb 		: out STD_LOGIC		:=	'0';
+        BLEUb 		: out STD_LOGIC		:=	'0';
+	VSb 		: out STD_LOGIC 	:=	'0';
+	bx 		: out integer 		:=	500;
+	by 		: out integer 		:=	300
+	);
 end balle;
 
 architecture Behavioral of balle is
