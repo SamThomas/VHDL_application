@@ -32,7 +32,7 @@ signal Valide 			: STD_LOGIC :='0';
 signal Horloge 			: STD_LOGIC :='0';
 
 
---G�n�ration des signaux de synchronisation
+--Generation des signaux de synchronisation
 begin
 
 process (clk25) 
@@ -132,8 +132,9 @@ if clk25'event and clk25='1' then
 end if;
 	end process;
 	
-
---Code du 3/04/12
+	
+	
+	
 process (Horloge)
 	begin
 	--Module de deplacement
